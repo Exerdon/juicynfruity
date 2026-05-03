@@ -86,7 +86,8 @@ body {
   background-size: cover;
   background-position:center;
   background-attachment: fixed;
-  height: 200vh;
+  height: 150vh;
+    weidth:50vw;
   color: white;
   text-align: center;
   padding: 10% 20px;
