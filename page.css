@@ -22,7 +22,10 @@ header,a{
     text-decoration: none;
 }
 body {
-  background:var(--body-color);
+  background:url(bacl.jpeg);
+  background-size: cover;
+  background-position:center;
+  background-attachment: fixed;
   color: #222;
 }
 
@@ -39,26 +42,61 @@ body {
   z-index: 10;
 }
 
+/* online status */
+.typing {
+  font-family: monospace;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid white;
+  width: 0;
+  animation: typing 3s steps(16) infinite alternate;
+}
+
+/* typing animation */
+#typing-text {
+  font-family: monospace;
+  font-size: 16px;
+}
+/* green blinking dot */
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: limegreen;
+  border-radius: 50%;
+  margin-left: 8px;
+  animation: blink 1s ease-in-out infinite;
+}
+
+
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.logo-img {
+      width: 40px;
+    height: 34px;
+    vertical-align: middle;
+    margin-top: -16px;
+    margin-right: 0px;
+    margin-left: -22px;
+  }
+
 .logo {
+  display: inline-block;
   font-size: 22px;
   font-weight: 600;
   color: #222;
-}
-.search-bar{
-    
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-
-    width: 90%;
-  max-width: 500px;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  font-size: 15px;
+  
 }
 
+.nav-links h3 {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
 .nav-links a {
   text-decoration: none;
   color: #222;
@@ -81,26 +119,36 @@ body {
 
 /* ===== Hero Section ===== */
 .hero {
-  background: linear-gradient(to right, #111, #444);
-  background-image: url('POSTER.png');
-  background-size: cover;
-  background-position:center;
-  background-attachment: fixed;
-  height: 40vh;
-    width:100vw;
+  
   color: white;
   text-align: center;
   padding: 10% 20px;
-}
+} 
 
 .hero-content h2 {
   font-size: 32px;
   margin-bottom: 100px;
 }
 
-.hero-content p {
-  font-size: 16px;
-  opacity: 0.9;
+.hero-content h2 {
+  font-size: 33px;
+  margin-bottom: 140px;
+  text-align: center;
+  color: white;
+
+  /* glow effect */
+  text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 40px #00ff88;
+
+  /* smooth fade */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-content img {
+    width: 100%;
+    margin-top: -96px;
+    margin-bottom: -80px;
+    opacity: 0.8;
+    border-radius: 5%;
 }
 
 
