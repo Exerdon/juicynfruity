@@ -87,10 +87,18 @@ body {
   }
 
 .logo {
-  display: inline-block;
-  font-size: 22px;
-  font-weight: 600;
+    display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
   color: #222;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing:auto;
+  font-style:italic;
+  background: linear-gradient(90deg, #258840, #d2581b, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px #ea7106, 0 0 20px #259043, 0 0 40px #00ff8812;
+
   
 }
 
