@@ -86,7 +86,7 @@ body {
 
 .logo {
   display: inline-block;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   color: #222;
   
@@ -95,7 +95,7 @@ body {
 .nav-links h3 {
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 16px;
 }
 .nav-links a {
   text-decoration: none;
@@ -125,27 +125,31 @@ body {
   padding: 10% 20px;
 } 
 
-.hero-content h2 {
-  font-size: 32px;
-  margin-bottom: 100px;
-}
 
-.hero-content h2 {
+
+.hero-content h2  {
   font-size: 33px;
-  margin-bottom: 140px;
+  margin-bottom: 14px;
   text-align: center;
   color: white;
 
   /* glow effect */
   text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 40px #00ff88;
 
-  /* smooth fade */
-  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
+.hero-content p {
+  background-color: aliceblue;
+  font-size: 20px;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 0px;
+  color: rgb(21, 162, 101);
+  text-shadow: 0 0 10px #111513, 0 0 20px #00ff88, 0 0 40px #00ff88;
+}
 .hero-content img {
     width: 100%;
-    margin-top: -96px;
+    margin-top: -9px;
     margin-bottom: -80px;
     opacity: 0.8;
     border-radius: 5%;
@@ -155,8 +159,8 @@ body {
 /* ===== Products Section ===== */
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
   padding: 70px 30px 100px 30px;
 }
 
@@ -431,6 +435,29 @@ body {
   background: white;
   margin-top: 30px;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact{
+  background-color: #555;
+  font-size: 14px;
+  border-radius: 6%;
+  padding: 10px 30px;
+  margin: 16px;
+
+}
+.contact img{
+  border-radius: 50%;
+  padding-top: 0%;
+  margin: 10px;
+   width: 25px; 
+   height: 25px;
+
+}
+.contact h3{
+  color: rgb(13, 11, 11);
+  margin-bottom: 13px;
+  padding-top: 10px;
+  
 }
 
 /* ===== Responsive ===== */
