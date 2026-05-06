@@ -2,6 +2,7 @@ console.log("Animation script loaded");
 const text = "We are online 😎";
 const text2 = "We will be online at 12 PM";
 const text3 = "We are closed for now 😔";
+const switchh = "";
 let index = 0;
 const speed = 100;
 
@@ -38,17 +39,17 @@ function updateStatus() {
   const now = new Date();
   const hour = now.getHours(); // gets current hour (0–23)
 
-  if (hour < 12) {
+  if (switchh == "off") {
     dot.style.background = "red"; // Show the red dot for offline status
-     return text2;//"We will be online at 12 PM"
+     return text2;//"We will be online soon😔"
   } 
-  else if (hour >= 12 && hour < 15) {
+  else if (switchh=="on") {
     dot.style.background = "limegreen"; // Show the green dot for online status
     return text; // "We are online 😎"
   } 
-  else {
-    dot.style.background = "red"; // Show the red dot for offline status
-    return text3; //"We are closed for now 😔"
+  else if (hour >= 3 && hour < 17) {
+     // Show the green dot for online status betweeen 3am to 5pm
+    return text; //"We are closed for now 😔"
   }
 }
 
