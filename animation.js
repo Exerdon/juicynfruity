@@ -1,6 +1,6 @@
 console.log("Animation script loaded");
 const text = "We are online 😎";
-const text2 = "We will be online at 12 PM";
+const text2 = "We will be online Tomorrow";
 const text3 = "We are closed for now 😔";
 const switchh = "";
 let index = 0;
