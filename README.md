@@ -1,2 +1,2 @@
 # juicynfruity
-websitte for bevrages
+website for beverages
