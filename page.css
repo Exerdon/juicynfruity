@@ -145,7 +145,7 @@ body {
   color: white;
 
   /* glow effect */
-  text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 40px #00ff88;
+  text-shadow: 0 0 8px #8FF0C1, 0 0 20px #00ff88, 0 0 40px #00ff88;
 
 }
 .hero-content p {
@@ -155,8 +155,8 @@ body {
   padding: 10px;
   border-radius: 10px;
   margin-top: 0px;
-  color: rgb(21, 162, 101);
-  text-shadow: 0 0 10px #111513, 0 0 20px #00ff88, 0 0 40px #00ff88;
+  color: #1F9D55;
+  text-shadow: 0 0 8px #8FF0C1, 0 0 20px #00ff88, 0 0 40px #00ff88;
 }
 .hero-content img {
     width: 100%;
