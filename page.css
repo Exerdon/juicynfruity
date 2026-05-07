@@ -33,7 +33,7 @@ body {
 
 /* ===== Navbar ===== */
 .navbar {
-  background: var(--nav-color);
+  background: #F8FFF8;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
@@ -90,7 +90,7 @@ body {
     display: inline-block;
   font-size: 20px;
   font-weight: 700;
-  color: #222;
+  color: #166534;
   font-family: "Cinzel", serif;
   font-optical-sizing:auto;
   font-style:italic;
