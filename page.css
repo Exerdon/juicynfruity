@@ -21,14 +21,23 @@ h1{
 header,a{
     text-decoration: none;
 }
+
 body {
-  background:url(bacl.jpeg);
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.45),
+      rgba(255,255,255,0.45)
+    ),
+    url("bacl.jpeg");
+
   background-size: cover;
-  background-position:center;
-  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+
   color: #222;
- width=100%;
-    height=100%;
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* ===== Navbar ===== */
