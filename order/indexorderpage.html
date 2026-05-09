@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smoothie Order</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#f4f4f4;
+        margin:0;
+        padding:20px;
+    }
+
+    .container{
+        max-width:500px;
+        margin:auto;
+        background:white;
+        padding:25px;
+        border-radius:15px;
+        box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    h2{
+        text-align:center;
+        margin-bottom:20px;
+    }
+
+    .section{
+        margin-bottom:25px;
+    }
+
+    .section h3{
+        margin-bottom:10px;
+        color:#333;
+    }
+
+    label{
+        display:block;
+        margin-bottom:10px;
+        cursor:pointer;
+    }
+
+    input[type="text"]{
+        width:100%;
+        padding:12px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        font-size:16px;
+        box-sizing:border-box;
+    }
+
+    button{
+        width:100%;
+        padding:14px;
+        border:none;
+        border-radius:10px;
+        background:#25D366;
+        color:white;
+        font-size:18px;
+        cursor:pointer;
+        margin-top:10px;
+    }
+
+    button:hover{
+        background:#1ebe5d;
+    }
+
+    .location-box{
+        background:#f1f1f1;
+        padding:10px;
+        border-radius:8px;
+        margin-top:10px;
+        word-break:break-word;
+        font-size:14px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Smoothie Order</h2>
+
+    <!-- Name -->
+    <div class="section">
+        <h3>Your Name</h3>
+        <input type="text" id="name" placeholder="Enter your name">
+    </div>
+
+    <!-- Single Choice -->
+    <div class="section">
+        <h3>Select Your Drink</h3>
+
+        <label><input type="radio" name="drink" value="Mango Shake"> Mango Shake</label>
+        <label><input type="radio" name="drink" value="Banana Shake"> Banana Shake</label>
+        <label><input type="radio" name="drink" value="Cold Coffee"> Cold Coffee</label>
+        <label><input type="radio" name="drink" value="Papaya Shake"> Papaya Shake</label>
+        <label><input type="radio" name="drink" value="Chocolate Shake"> Chocolate Shake</label>
+    </div>
+
+    <!-- Toppings -->
+    <div class="section">
+        <h3>Select Any 2 Toppings</h3>
+
+        <label><input type="checkbox" class="topping" value="Chia Seeds"> Chia Seeds</label>
+        <label><input type="checkbox" class="topping" value="Coconut"> Coconut</label>
+        <label><input type="checkbox" class="topping" value="Choco Chips"> Choco Chips</label>
+        <label><input type="checkbox" class="topping" value="Tuty Fruity"> Tuty Fruity</label>
+        <label><input type="checkbox" class="topping" value="Ice Cream"> Ice Cream</label>
+    </div>
+
+    <!-- Sugar and Ice -->
+    <div class="section">
+        <h3>Add Options</h3>
+
+        <label><input type="checkbox" id="sugar"> Sugar</label>
+        <label><input type="checkbox" id="ice"> Ice</label>
+    </div>
+
+    <!-- Location -->
+    <div class="section">
+        <h3>Location</h3>
+
+        <button type="button" onclick="getLocation()">
+            Fetch Current Location
+        </button>
+
+        <div id="locationDisplay" class="location-box">
+            Location not fetched
+        </div>
+    </div>
+
+    <!-- Submit -->
+    <button onclick="placeOrder()">
+        Place Order
+    </button>
+
+</div>
+
+<script>
+
+let locationLink = "";
+
+
+// Limit toppings to 2
+const toppingCheckboxes = document.querySelectorAll(".topping");
+
+toppingCheckboxes.forEach((checkbox) => {
+
+    checkbox.addEventListener("change", () => {
+
+        let checked =
+            document.querySelectorAll(".topping:checked");
+
+        if(checked.length > 2){
+            checkbox.checked = false;
+            alert("You can select only 2 toppings.");
+        }
+    });
+});
+
+
+// Fetch Location
+function getLocation(){
+
+    if(navigator.geolocation){
+
+        navigator.geolocation.getCurrentPosition(
+
+            function(position){
+
+                let lat = position.coords.latitude;
+                let lng = position.coords.longitude;
+
+                locationLink =
+                `https://maps.google.com/?q=${lat},${lng}`;
+
+                document.getElementById(
+                    "locationDisplay"
+                ).innerHTML = locationLink;
+            },
+
+            function(){
+                alert("Location permission denied.");
+            }
+
+        );
+
+    }else{
+        alert("Geolocation is not supported.");
+    }
+}
+
+
+// Place Order
+function placeOrder(){
+
+    let name =
+        document.getElementById("name").value;
+
+    let drink =
+        document.querySelector(
+            'input[name="drink"]:checked'
+        );
+
+    if(!name){
+        alert("Please enter your name");
+        return;
+    }
+
+    if(!drink){
+        alert("Please select a drink");
+        return;
+    }
+
+    // Toppings
+    let toppings = [];
+
+    document.querySelectorAll(
+        ".topping:checked"
+    ).forEach((item)=>{
+        toppings.push(item.value);
+    });
+
+    // Sugar and Ice
+    let sugar =
+        document.getElementById("sugar").checked;
+
+    let ice =
+        document.getElementById("ice").checked;
+
+    // Final Message
+    let message =
+`Smoothies order from "${name}"
+
+"${drink.value}" with "${toppings.join('", "')}"
+
+Ice: ${ice}
+Sugar: ${sugar}
+
+Location:
+${locationLink}`;
+
+    let encodedMessage =
+        encodeURIComponent(message);
+
+    let whatsappLink =
+`https://wa.me/919045469325?text=${encodedMessage}`;
+
+    window.location.href = whatsappLink;
+}
+
+</script>
+
+</body>
+</html>
