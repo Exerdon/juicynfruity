@@ -4,110 +4,308 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> JuicynFruity</title>
+  <title>JuicynFruity</title>
+
   <link rel="icon" type="image/png" href="w.png">
   <link rel="stylesheet" type="text/css" href="page.css">
-</head>
 
+  <style>
+
+    .top-order-btn{
+      display:inline-block;
+      margin-top:15px;
+      padding:14px 28px;
+      background:#20c45a;
+      color:white;
+      text-decoration:none;
+      border-radius:40px;
+      font-size:18px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .top-order-btn:hover{
+      background:#18a94b;
+      transform:scale(1.03);
+    }
+
+    .product-card{
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .product-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .product-description{
+      color:#666;
+      font-size:15px;
+      line-height:1.5;
+      margin:10px 0;
+    }
+
+    .click-order{
+      margin-top:15px;
+      color:#20c45a;
+      font-weight:bold;
+      text-align:center;
+      font-size:16px;
+    }
+
+  </style>
+</head>
 
 <body>
 
   <!-- ===== Navbar ===== -->
   <header class="navbar">
+
     <a href="index.html">
       <img src="w.png" alt="Logo" class="logo-img">
       <h1 class="logo">JUICYnFRUITY</h1>
-
     </a>
 
     <nav class="nav-links">
       <h3>
         <span id="typing-test"></span>
-
         <span class="dot" id="dot"></span>
       </h3>
     </nav>
+
   </header>
+
+
+
+
 
   <!-- ===== Hero Section ===== -->
   <section class="hero">
+
     <div class="hero-content">
-      <h2>Welcome </h2>
-      <p>Order Your Favorite Bevrages 🥤</p>
-      <p>Order Smoothies & juices | Whatsapp order | COD💵 </p>
+
+      <h2>Welcome</h2>
+
+      <p>Order Your Favorite Beverages 🥤</p>
+
+      <p>
+        Fresh Smoothies & Juices |
+        Whatsapp Orders |
+        COD 💵
+      </p>
+
+      <!-- ORDER BUTTON -->
+      <a href="/order/" class="top-order-btn">
+        Order Now
+      </a>
+
       <div>
         <img src="mm.jpeg" alt="">
       </div>
+
     </div>
+
   </section>
+
+
+
+
 
   <!-- ===== Products Section ===== -->
   <main class="products-container">
 
+
+
     <!-- Product Card 1 -->
-    <div class="product-card" id="1">
-      <img src="banana.jpeg" alt="Product 1" />
+    <div class="product-card"
+      onclick="window.location.href='/order/'">
+
+      <img src="banana.jpeg" alt="Banana Shake" />
+
       <h3>Banana Shake</h3>
+
       <p class="price">₹55</p>
-      <button class="btn" onclick="orderNow('banana shake', 55)">Order Now</button>
-    </div>
 
-    <!-- Product Card 2 -->
-    <div class="product-card" id="2">
-      <img src="coldcoff.jpeg" alt="Product 2" />
-      <h3>Cold Coffee</h3>
-      <p class="price">₹70</p>
-      <button class="btn" onclick="orderNow('cold coffee', 70)">Order Now</button>
-    </div>
+      <p class="product-description">
+        Creamy banana delight blended fresh
+        for a naturally sweet and energetic drink.
+      </p>
 
-    
-         <!-- Product Card 3 -->
-      <div class="product-card" id="5">
-        <img src="mango.jpeg" alt="Product 5" />
-        <h3>Mango Shake </h3>
-        <p class="price">₹70</p>
-        <button class="btn" onclick="orderNow('Mango shake', 70)">Order Now </button>
+      <div class="click-order">
+        Click Me To Order
       </div>
 
-    <!-- Product Card 4 -->
-    <div class="product-card" id="4">
-      <img src="papaya.jpeg" alt="Product 4" />
-      <h3>Papaya Shake</h3>
-      <p class="price">₹60</p>
-      <button class="btn" onclick="orderNow('papaya shake', 60)">Order Now</button>
     </div>
-    <!-- Product Card 5 -->
-    <div class="product-card" id="3">
-      <img src="chobanana.jpeg" alt="Product 3" />
-      <h3>Banana Chocolate Shake</h3>
+
+
+
+
+
+    <!-- Product Card 2 -->
+    <div class="product-card"
+      onclick="window.location.href='/order/'">
+
+      <img src="coldcoff.jpeg" alt="Cold Coffee" />
+
+      <h3>Cold Coffee</h3>
+
       <p class="price">₹70</p>
-      <button class="btn" onclick="orderNow('banana chocolate shake', 70)">Order Now</button>
+
+      <p class="product-description">
+        Chilled creamy coffee with rich flavor
+        and refreshing café-style taste.
+      </p>
+
+      <div class="click-order">
+        Click Me To Order
+      </div>
+
     </div>
- 
+
+
+
+
+
+    <!-- Product Card 3 -->
+    <div class="product-card"
+      onclick="window.location.href='/order/'">
+
+      <img src="mango.jpeg" alt="Mango Shake" />
+
+      <h3>Mango Shake</h3>
+
+      <p class="price">₹70</p>
+
+      <p class="product-description">
+        Thick mango smoothie made with juicy
+        ripe mangoes and pure freshness.
+      </p>
+
+      <div class="click-order">
+        Click Me To Order
+      </div>
+
+    </div>
+
+
+
+
+
+    <!-- Product Card 4 -->
+    <div class="product-card"
+      onclick="window.location.href='/order/'">
+
+      <img src="papaya.jpeg" alt="Papaya Shake" />
+
+      <h3>Papaya Shake</h3>
+
+      <p class="price">₹60</p>
+
+      <p class="product-description">
+        Healthy papaya blend packed with
+        refreshing flavor and goodness.
+      </p>
+
+      <div class="click-order">
+        Click Me To Order
+      </div>
+
+    </div>
+
+
+
+
+
+    <!-- Product Card 5 -->
+    <div class="product-card"
+      onclick="window.location.href='/order/'">
+
+      <img src="chobanana.jpeg"
+      alt="Banana Chocolate Shake" />
+
+      <h3>Banana Chocolate Shake</h3>
+
+      <p class="price">₹70</p>
+
+      <p class="product-description">
+        Rich chocolate mixed with banana
+        for the perfect creamy dessert drink.
+      </p>
+
+      <div class="click-order">
+        Click Me To Order
+      </div>
+
+    </div>
+
+
+
+
+
     <!-- Product Card 6 -->
-    <div class="product-card" id="6">
-      <img src="aam.jpeg" alt="Product 6" />
-      <h3>pudina Aam Panna </h3>
+    <div class="product-card"
+      onclick="window.location.href='/order/'">
+
+      <img src="aam.jpeg" alt="Pudina Aam Panna" />
+
+      <h3>Pudina Aam Panna</h3>
+
       <p class="price">₹25</p>
-      <button class="btn" onclick="orderNow('pudina Aam Panna', 25)">Order Now</button>
-    </div> 
-<a href="/order/indexorderpage.html">
-    Order Now
-</a>
-  </main>
-  <footer>
-    <div class="contact">
-      <h3>Contact Us</h3>
-      <a href="https://wa.me/9045469325"><img  src="imae.png" alt=""></a>
-     <a href="https://www.instagram.com/juicy.n.fruity?igsh=MWZiY3Z0aW5xc28zOA=="> <img src="image.png" alt=""></a>
-      <p>Neibhorhood Park, Sector 65, Mohali, 160064 
-        <br> Connect for Order Queries, Feedback or report issue</p>
-      <p></p>
-      <p>© 2026 Juicy&fruity. All Rights Reserved</p>
+
+      <p class="product-description">
+        Tangy raw mango cooler with mint,
+        perfect for refreshing summer vibes.
+      </p>
+
+      <div class="click-order">
+        Click Me To Order
+      </div>
+
     </div>
+
+  </main>
+
+
+
+
+
+
+  <!-- ===== Footer ===== -->
+  <footer>
+
+    <div class="contact">
+
+      <h3>Contact Us</h3>
+
+      <a href="https://wa.me/9045469325">
+        <img src="imae.png" alt="">
+      </a>
+
+      <a href="https://www.instagram.com/juicy.n.fruity?igsh=MWZiY3Z0aW5xc28zOA==">
+        <img src="image.png" alt="">
+      </a>
+
+      <p>
+        Neighborhood Park,
+        Sector 65,
+        Mohali,
+        160064
+        <br>
+        Connect for Order Queries,
+        Feedback or Report Issues
+      </p>
+
+      <p>
+        © 2026 Juicy&Fruity.
+        All Rights Reserved
+      </p>
+
+    </div>
+
   </footer>
 
   <script src="animation.js"></script>
+
 </body>
 
 </html>
