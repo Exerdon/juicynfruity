@@ -6,75 +6,92 @@
 <title>Smoothie Order</title>
 
 <style>
-    body{
-        font-family: Arial, sans-serif;
-        background:#f4f4f4;
-        margin:0;
-        padding:20px;
-    }
 
-    .container{
-        max-width:500px;
-        margin:auto;
-        background:white;
-        padding:25px;
-        border-radius:15px;
-        box-shadow:0 5px 15px rgba(0,0,0,0.15);
-    }
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    margin:0;
+    padding:20px;
+}
 
-    h2{
-        text-align:center;
-        margin-bottom:20px;
-    }
+.container{
+    max-width:500px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
 
-    .section{
-        margin-bottom:25px;
-    }
+h2{
+    text-align:center;
+    margin-bottom:25px;
+}
 
-    .section h3{
-        margin-bottom:10px;
-        color:#333;
-    }
+.section{
+    margin-bottom:25px;
+}
 
-    label{
-        display:block;
-        margin-bottom:10px;
-        cursor:pointer;
-    }
+.section h3{
+    margin-bottom:15px;
+    color:#333;
+}
 
-    input[type="text"]{
-        width:100%;
-        padding:12px;
-        border:1px solid #ccc;
-        border-radius:8px;
-        font-size:16px;
-        box-sizing:border-box;
-    }
+label{
+    display:block;
+    margin-bottom:14px;
+    font-size:18px;
+    cursor:pointer;
+}
 
-    button{
-        width:100%;
-        padding:14px;
-        border:none;
-        border-radius:10px;
-        background:#25D366;
-        color:white;
-        font-size:18px;
-        cursor:pointer;
-        margin-top:10px;
-    }
+input[type="text"]{
+    width:100%;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+    box-sizing:border-box;
+}
 
-    button:hover{
-        background:#1ebe5d;
-    }
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#25D366;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
 
-    .location-box{
-        background:#f1f1f1;
-        padding:10px;
-        border-radius:8px;
-        margin-top:10px;
-        word-break:break-word;
-        font-size:14px;
-    }
+button:hover{
+    background:#1ebe5d;
+}
+
+.location-box{
+    background:#f1f1f1;
+    padding:12px;
+    border-radius:8px;
+    margin-top:10px;
+    font-size:14px;
+    word-break:break-word;
+}
+
+.total-box{
+    background:#fff3cd;
+    border:1px solid #ffe69c;
+    padding:15px;
+    border-radius:10px;
+    font-size:22px;
+    font-weight:bold;
+    text-align:center;
+}
+
+.price{
+    color:#1e8e3e;
+    font-weight:bold;
+}
+
 </style>
 </head>
 
@@ -82,161 +99,427 @@
 
 <div class="container">
 
-    <h2>Smoothie Order</h2>
+<h2>Smoothie Order</h2>
 
-    <!-- Name -->
-    <div class="section">
-        <h3>Your Name</h3>
-        <input type="text" id="name" placeholder="Enter your name">
-    </div>
+<!-- NAME -->
+<div class="section">
 
-    <!-- Single Choice -->
-    <div class="section">
-        <h3>Select Your Drink</h3>
+<h3>Your Name</h3>
 
-        <label><input type="radio" name="drink" value="Mango Shake"> Mango Shake</label>
-        <label><input type="radio" name="drink" value="Banana Shake"> Banana Shake</label>
-        <label><input type="radio" name="drink" value="Cold Coffee"> Cold Coffee</label>
-        <label><input type="radio" name="drink" value="Papaya Shake"> Papaya Shake</label>
-        <label><input type="radio" name="drink" value="Chocolate Shake"> Chocolate Shake</label>
-    </div>
-
-    <!-- Toppings -->
-    <div class="section">
-        <h3>Select Any 2 Toppings</h3>
-
-        <label><input type="checkbox" class="topping" value="Chia Seeds"> Chia Seeds</label>
-        <label><input type="checkbox" class="topping" value="Coconut"> Coconut</label>
-        <label><input type="checkbox" class="topping" value="Choco Chips"> Choco Chips</label>
-        <label><input type="checkbox" class="topping" value="Tuty Fruity"> Tuty Fruity</label>
-        <label><input type="checkbox" class="topping" value="Ice Cream"> Ice Cream</label>
-    </div>
-
-    <!-- Sugar and Ice -->
-    <div class="section">
-        <h3>Add Options</h3>
-
-        <label><input type="checkbox" id="sugar"> Sugar</label>
-        <label><input type="checkbox" id="ice"> Ice</label>
-    </div>
-
-    <!-- Location -->
-    <div class="section">
-        <h3>Location</h3>
-
-        <button type="button" onclick="getLocation()">
-            Fetch Current Location
-        </button>
-
-        <div id="locationDisplay" class="location-box">
-            Location not fetched
-        </div>
-    </div>
-
-    <!-- Submit -->
-    <button onclick="placeOrder()">
-        Place Order
-    </button>
+<input type="text"
+id="name"
+placeholder="Enter your name">
 
 </div>
+
+
+<!-- DRINKS -->
+<div class="section">
+
+<h3>Select Your Drink</h3>
+
+<label>
+<input type="radio"
+name="drink"
+value="Mango Shake"
+data-price="70">
+
+Mango Shake
+<span class="price">- Rs. 70.00</span>
+</label>
+
+
+<label>
+<input type="radio"
+name="drink"
+value="Banana Shake"
+data-price="55">
+
+Banana Shake
+<span class="price">- Rs. 55.00</span>
+</label>
+
+
+<label>
+<input type="radio"
+name="drink"
+value="Cold Coffee"
+data-price="70">
+
+Cold Coffee
+<span class="price">- Rs. 70.00</span>
+</label>
+
+
+<label>
+<input type="radio"
+name="drink"
+value="Papaya Shake"
+data-price="60">
+
+Papaya Shake
+<span class="price">- Rs. 60.00</span>
+</label>
+
+
+<label>
+<input type="radio"
+name="drink"
+value="Banana Chocolate Shake"
+data-price="70">
+
+Banana Chocolate Shake
+<span class="price">- Rs. 70.00</span>
+</label>
+
+
+<label>
+<input type="radio"
+name="drink"
+value="Pudina Aam Panna"
+data-price="25">
+
+Pudina Aam Panna
+<span class="price">- Rs. 25.00</span>
+</label>
+
+</div>
+
+
+
+<!-- TOPPINGS -->
+<div class="section">
+
+<h3>Select Any 2 Toppings</h3>
+
+<label>
+<input type="checkbox"
+class="topping"
+value="Chia Seeds"
+data-price="3">
+
+Chia Seeds
+<span class="price">+ Rs 3.00</span>
+</label>
+
+
+<label>
+<input type="checkbox"
+class="topping"
+value="Coconut"
+data-price="0">
+
+Coconut
+<span class="price">+ Rs 0.00</span>
+</label>
+
+
+<label>
+<input type="checkbox"
+class="topping"
+value="Choco Chips"
+data-price="2">
+
+Choco Chips
+<span class="price">+ Rs 2.00</span>
+</label>
+
+
+<label>
+<input type="checkbox"
+class="topping"
+value="Tuty Fruity"
+data-price="0">
+
+Tuty Fruity
+<span class="price">+ Rs 0.00</span>
+</label>
+
+
+<label>
+<input type="checkbox"
+class="topping"
+value="Ice Cream"
+data-price="10">
+
+Ice Cream
+<span class="price">+ Rs 10.00</span>
+</label>
+
+</div>
+
+
+
+<!-- OPTIONS -->
+<div class="section">
+
+<h3>Add Options</h3>
+
+<label>
+<input type="checkbox" id="sugar">
+Sugar
+</label>
+
+<label>
+<input type="checkbox" id="ice">
+Ice
+</label>
+
+</div>
+
+
+
+<!-- LOCATION -->
+<div class="section">
+
+<h3>Location</h3>
+
+<button type="button"
+onclick="getLocation()">
+
+Fetch Current Location
+
+</button>
+
+<div id="locationDisplay"
+class="location-box">
+
+Location not fetched
+
+</div>
+
+</div>
+
+
+
+<!-- TOTAL -->
+<div class="section">
+
+<div class="total-box">
+
+Total: Rs.
+<span id="totalAmount">0</span>
+
+</div>
+
+</div>
+
+
+
+<!-- ORDER BUTTON -->
+<button onclick="placeOrder()">
+
+Place Order
+
+</button>
+
+</div>
+
+
 
 <script>
 
 let locationLink = "";
 
 
-// Limit toppings to 2
-const toppingCheckboxes = document.querySelectorAll(".topping");
 
-toppingCheckboxes.forEach((checkbox) => {
+// LIMIT TOPPINGS TO 2
+const toppingCheckboxes =
+document.querySelectorAll(".topping");
 
-    checkbox.addEventListener("change", () => {
+toppingCheckboxes.forEach((checkbox)=>{
 
-        let checked =
-            document.querySelectorAll(".topping:checked");
+checkbox.addEventListener("change",()=>{
 
-        if(checked.length > 2){
-            checkbox.checked = false;
-            alert("You can select only 2 toppings.");
-        }
-    });
+let checked =
+document.querySelectorAll(
+".topping:checked"
+);
+
+if(checked.length > 2){
+
+checkbox.checked = false;
+
+alert(
+"You can select only 2 toppings."
+);
+
+}
+
+updateTotal();
+
+});
+
 });
 
 
-// Fetch Location
-function getLocation(){
 
-    if(navigator.geolocation){
+// UPDATE TOTAL
+function updateTotal(){
 
-        navigator.geolocation.getCurrentPosition(
+let total = 0;
 
-            function(position){
 
-                let lat = position.coords.latitude;
-                let lng = position.coords.longitude;
+// Drink Price
+let selectedDrink =
+document.querySelector(
+'input[name="drink"]:checked'
+);
 
-                locationLink =
-                `https://maps.google.com/?q=${lat},${lng}`;
+if(selectedDrink){
 
-                document.getElementById(
-                    "locationDisplay"
-                ).innerHTML = locationLink;
-            },
+total += Number(
+selectedDrink.dataset.price
+);
 
-            function(){
-                alert("Location permission denied.");
-            }
-
-        );
-
-    }else{
-        alert("Geolocation is not supported.");
-    }
 }
 
 
-// Place Order
+// Topping Prices
+document.querySelectorAll(
+'.topping:checked'
+).forEach((item)=>{
+
+total += Number(
+item.dataset.price
+);
+
+});
+
+
+document.getElementById(
+"totalAmount"
+).innerText = total;
+
+}
+
+
+
+// RADIO BUTTON CHANGE
+document.querySelectorAll(
+'input[name="drink"]'
+).forEach((radio)=>{
+
+radio.addEventListener(
+"change",
+updateTotal
+);
+
+});
+
+
+
+
+// FETCH LOCATION
+function getLocation(){
+
+if(!navigator.geolocation){
+
+alert(
+"Geolocation not supported."
+);
+
+return;
+}
+
+
+navigator.geolocation.getCurrentPosition(
+
+function(position){
+
+let lat =
+position.coords.latitude;
+
+let lng =
+position.coords.longitude;
+
+locationLink =
+`https://maps.google.com/?q=${lat},${lng}`;
+
+document.getElementById(
+"locationDisplay"
+).innerHTML =
+"Location fetched successfully";
+
+},
+
+function(error){
+
+alert(
+"Please allow location permission."
+);
+
+}
+
+);
+
+}
+
+
+
+
+// PLACE ORDER
 function placeOrder(){
 
-    let name =
-        document.getElementById("name").value;
+let name =
+document.getElementById(
+"name"
+).value;
 
-    let drink =
-        document.querySelector(
-            'input[name="drink"]:checked'
-        );
+if(!name){
 
-    if(!name){
-        alert("Please enter your name");
-        return;
-    }
+alert("Please enter your name");
 
-    if(!drink){
-        alert("Please select a drink");
-        return;
-    }
+return;
+}
 
-    // Toppings
-    let toppings = [];
 
-    document.querySelectorAll(
-        ".topping:checked"
-    ).forEach((item)=>{
-        toppings.push(item.value);
-    });
+let drink =
+document.querySelector(
+'input[name="drink"]:checked'
+);
 
-    // Sugar and Ice
-    let sugar =
-        document.getElementById("sugar").checked;
+if(!drink){
 
-    let ice =
-        document.getElementById("ice").checked;
+alert("Please select a drink");
 
-    // Final Message
-    let message =
-`Smoothies order from "${name}"
+return;
+}
 
-"${drink.value}" with "${toppings.join('", "')}"
+
+
+// TOPPINGS
+let toppings = [];
+
+document.querySelectorAll(
+'.topping:checked'
+).forEach((item)=>{
+
+toppings.push(item.value);
+
+});
+
+
+
+// OPTIONS
+let sugar =
+document.getElementById(
+"sugar"
+).checked;
+
+let ice =
+document.getElementById(
+"ice"
+).checked;
+
+
+
+// FINAL MESSAGE
+let message =
+
+`Smoothies order from ${name}
+
+${drink.value} with ${toppings.join(", ")}
 
 Ice: ${ice}
 Sugar: ${sugar}
@@ -244,13 +527,22 @@ Sugar: ${sugar}
 Location:
 ${locationLink}`;
 
-    let encodedMessage =
-        encodeURIComponent(message);
 
-    let whatsappLink =
+
+let encodedMessage =
+encodeURIComponent(message);
+
+
+
+let whatsappLink =
+
 `https://wa.me/919045469325?text=${encodedMessage}`;
 
-    window.location.href = whatsappLink;
+
+
+window.location.href =
+whatsappLink;
+
 }
 
 </script>
