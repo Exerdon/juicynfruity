@@ -1,0 +1,15 @@
+{
+  "name": "JUICYnFRUITY",
+  "short_name": "JNF",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1fc75b",
+  "icons": [
+    {
+      "src": "/w.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
