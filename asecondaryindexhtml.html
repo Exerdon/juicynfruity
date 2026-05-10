@@ -2,386 +2,111 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8" />
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>JUICYnFRUITY</title>
 
-  <link rel="icon"
-        type="image/png"
-        href="w.png">
-
-  <link rel="stylesheet"
-        type="text/css"
-        href="page.css">
+  <link rel="icon" type="image/png" href="w.png">
+  <link rel="stylesheet" type="text/css" href="page.css">
 
   <style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-
-      font-family: Arial, sans-serif;
-
-      background:
-      linear-gradient(
-      rgba(255,255,255,0.72),
-      rgba(255,255,255,0.72)
-      ),
-
-      url("bg.jpeg");
-
-      background-size:cover;
-      background-position:center;
-      background-attachment:fixed;
-
-      color:#222;
-    }
-
-
-
-    /* ===== NAVBAR ===== */
-
-    .navbar{
-
-      width:100%;
-
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-
-      padding:18px 22px;
-
-      background:rgba(255,255,255,0.92);
-
-      backdrop-filter:blur(12px);
-
-      position:sticky;
-      top:0;
-      z-index:999;
-
-      box-shadow:0 4px 20px rgba(0,0,0,0.08);
-    }
-
-
-    .navbar a{
-
-      display:flex;
-      align-items:center;
-
-      text-decoration:none;
-    }
-
-
-    .logo-img{
-
-      width:58px;
-      margin-right:10px;
-    }
-
-
-    .logo{
-
-      font-size:34px;
-      color:#0f7d36;
-      font-weight:800;
-      letter-spacing:1px;
-    }
-
-
-    .online-status{
-
-      font-size:24px;
-      font-weight:bold;
-      color:#111;
-    }
-
-
-    .dot{
-
-      width:14px;
-      height:14px;
-
-      background:#37d34a;
-
-      border-radius:50%;
-
+    .hero-order-btn{
       display:inline-block;
-
-      margin-left:8px;
-
-      animation:pulse 1.2s infinite;
-    }
-
-
-    @keyframes pulse{
-
-      0%{
-        transform:scale(1);
-        opacity:1;
-      }
-
-      50%{
-        transform:scale(1.4);
-        opacity:0.6;
-      }
-
-      100%{
-        transform:scale(1);
-        opacity:1;
-      }
-    }
-
-
-
-
-
-
-    /* ===== HERO SECTION ===== */
-
-    .hero{
-
-      width:100%;
-
-      min-height:100vh;
-
-      display:flex;
-      justify-content:center;
-      align-items:center;
-
-      padding:40px 20px;
-    }
-
-
-    .hero-content{
-
-      width:100%;
-      max-width:900px;
-
-      text-align:center;
-    }
-
-
-    .hero-title{
-
-      font-size:72px;
+      margin-top:20px;
+      padding:18px 34px;
+      background:#1fc75b;
       color:white;
-      font-weight:900;
-
-      text-shadow:
-      0 4px 15px rgba(0,0,0,0.25);
-
-      margin-bottom:25px;
-    }
-
-
-    .hero-box{
-
-      background:
-      rgba(255,255,255,0.78);
-
-      backdrop-filter:blur(12px);
-
-      padding:25px;
-
-      border-radius:35px;
-
-      margin-bottom:28px;
-
-      box-shadow:
-      0 10px 25px rgba(0,0,0,0.12);
-    }
-
-
-    .hero-box p{
-
-      font-size:32px;
-      line-height:1.5;
-
-      color:#17a84d;
-
+      text-decoration:none;
+      border-radius:45px;
+      font-size:20px;
       font-weight:bold;
+      transition:0.3s;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
     }
 
-
-    .hero-logo{
-
-      width:340px;
-
-      max-width:90%;
-
-      margin:40px auto 20px auto;
-
-      display:block;
+    .hero-order-btn:hover{
+      background:#17ae4c;
+      transform:scale(1.04);
     }
-
-
-
-
-
-
-
-    /* ===== CATEGORY BUTTONS ===== */
 
     .category-container{
-
+      width:100%;
+      max-width:800px;
+      margin:40px auto 0 auto;
       display:flex;
       flex-direction:column;
-
-      gap:25px;
-
-      margin-top:45px;
+      gap:30px;
     }
 
-
-    .category-btn{
-
-      width:100%;
-
-      display:flex;
-      justify-content:center;
-      align-items:center;
-
+    .category-card{
+      background:rgba(255,255,255,0.85);
+      backdrop-filter:blur(8px);
+      border-radius:35px;
+      padding:28px;
       text-decoration:none;
-
-      padding:28px 20px;
-
-      border-radius:40px;
-
-      background:
-      linear-gradient(
-      135deg,
-      #1fd35d,
-      #14b84e
-      );
-
-      color:white;
-
-      font-size:30px;
-      font-weight:800;
-
-      box-shadow:
-      0 12px 25px rgba(0,0,0,0.15);
-
+      color:#222;
       transition:0.35s;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+      border:2px solid rgba(255,255,255,0.5);
     }
 
-
-    .category-btn:hover{
-
-      transform:
-      translateY(-5px)
-      scale(1.02);
-
-      box-shadow:
-      0 18px 30px rgba(0,0,0,0.18);
+    .category-card:hover{
+      transform:translateY(-6px) scale(1.02);
+      box-shadow:0 12px 30px rgba(0,0,0,0.18);
     }
 
-
-    .category-sub{
-
-      display:block;
-
-      font-size:17px;
-      font-weight:normal;
-
-      margin-top:8px;
-
-      opacity:0.95;
+    .category-top{
+      display:flex;
+      align-items:center;
+      gap:20px;
     }
 
-
-
-
-
-
-
-    /* ===== FOOTER ===== */
-
-    footer{
-
-      margin-top:60px;
-
-      padding:40px 20px;
-
-      text-align:center;
-
-      background:
-      rgba(255,255,255,0.9);
-
-      backdrop-filter:blur(10px);
+    .category-icon{
+      font-size:55px;
     }
 
-
-    footer h3{
-
-      font-size:28px;
-
-      margin-bottom:20px;
-
-      color:#15853c;
+    .category-title{
+      font-size:34px;
+      font-weight:800;
+      color:#169c48;
+      margin-bottom:6px;
     }
 
-
-    footer p{
-
+    .category-desc{
       font-size:18px;
-
-      line-height:1.7;
-
-      color:#444;
+      line-height:1.6;
+      color:#555;
+      margin-top:12px;
     }
 
-
-
-
-
-
-    /* ===== MOBILE ===== */
+    .category-click{
+      margin-top:18px;
+      font-size:18px;
+      font-weight:bold;
+      color:#1fc75b;
+      text-align:right;
+    }
 
     @media(max-width:768px){
 
-      .logo{
-
-        font-size:22px;
+      .category-title{
+        font-size:26px;
       }
 
-
-      .logo-img{
-
-        width:48px;
+      .category-desc{
+        font-size:16px;
       }
 
+      .category-icon{
+        font-size:42px;
+      }
 
-      .online-status{
-
+      .hero-order-btn{
+        width:90%;
+        text-align:center;
         font-size:18px;
-      }
-
-
-      .hero-title{
-
-        font-size:64px;
-      }
-
-
-      .hero-box p{
-
-        font-size:24px;
-      }
-
-
-      .category-btn{
-
-        font-size:24px;
-        padding:24px 18px;
       }
 
     }
@@ -390,42 +115,27 @@
 
 </head>
 
-
-
-
-
 <body>
 
-
-
-
-
-  <!-- ===== NAVBAR ===== -->
-
+  <!-- ===== Navbar ===== -->
   <header class="navbar">
 
     <a href="index.html">
 
-      <img src="w.png"
-           alt="Logo"
-           class="logo-img">
+      <img src="w.png" alt="Logo" class="logo-img">
 
-      <h1 class="logo">
-
-        JUICYnFRUITY
-
-      </h1>
+      <h1 class="logo">JUICYnFRUITY</h1>
 
     </a>
 
+    <nav class="nav-links">
 
-    <div class="online-status">
+      <h3>
+        <span id="typing-test"></span>
+        <span class="dot" id="dot"></span>
+      </h3>
 
-      We are online 😎
-
-      <span class="dot"></span>
-
-    </div>
+    </nav>
 
   </header>
 
@@ -433,54 +143,40 @@
 
 
 
-
-  <!-- ===== HERO ===== -->
-
+  <!-- ===== Hero Section ===== -->
   <section class="hero">
 
     <div class="hero-content">
 
+      <h2>Welcome</h2>
 
+      <p>
+        Fresh • Healthy • Delicious 🥤
+      </p>
 
-      <h1 class="hero-title">
+      <p>
+        Smoothies | Salads | Meals | COD 💵
+      </p>
 
-        Welcome
-
-      </h1>
-
-
-
-
-
-      <div class="hero-box">
-
-        <p>
-
-          Fresh Smoothies 🥤 <br>
-
-          Fruit Salads 🍓 <br>
-
-          Healthy Meals 🍱
-
-        </p>
-
+      <div>
+        <img src="mm.jpeg" alt="">
       </div>
 
+      <br>
+
+      <!-- MAIN ORDER BUTTON -->
+      <a href="/asecondaryindexhtml.html"
+         class="hero-order-btn">
+
+         ORDER NOW WITH COD 💵
+
+      </a>
 
 
 
 
-      <img src="mm.jpeg"
-           alt="JUICYnFRUITY"
-           class="hero-logo">
 
-
-
-
-
-
-
-      <!-- ===== CATEGORY BUTTONS ===== -->
+      <!-- ===== CATEGORY SECTION ===== -->
 
       <div class="category-container">
 
@@ -489,17 +185,36 @@
         <!-- Smoothies -->
 
         <a href="#"
-           class="category-btn">
+           class="category-card">
 
-          <div>
+          <div class="category-top">
 
-            Explore Smoothies & Juices 🥤
+            <div class="category-icon">
+              🥤
+            </div>
 
-            <span class="category-sub">
+            <div>
 
-              Fresh • Creamy • Refreshing
+              <div class="category-title">
+                Explore Smoothies & Juices
+              </div>
 
-            </span>
+            </div>
+
+          </div>
+
+          <div class="category-desc">
+
+            Freshly blended fruit smoothies,
+            creamy shakes, cold coffees and
+            refreshing summer drinks made
+            with natural ingredients.
+
+          </div>
+
+          <div class="category-click">
+
+            Click To Explore →
 
           </div>
 
@@ -512,17 +227,36 @@
         <!-- Salads -->
 
         <a href="#"
-           class="category-btn">
+           class="category-card">
 
-          <div>
+          <div class="category-top">
 
-            Explore Fruity Salads 🍓
+            <div class="category-icon">
+              🍓
+            </div>
 
-            <span class="category-sub">
+            <div>
 
-              Healthy • Colorful • Nutritious
+              <div class="category-title">
+                Explore Fruity Salads
+              </div>
 
-            </span>
+            </div>
+
+          </div>
+
+          <div class="category-desc">
+
+            Healthy fruit bowls packed with
+            freshness, nutrition and colorful
+            seasonal fruits for a perfect
+            guilt-free snack.
+
+          </div>
+
+          <div class="category-click">
+
+            Click To Explore →
 
           </div>
 
@@ -535,17 +269,36 @@
         <!-- Meals -->
 
         <a href="#"
-           class="category-btn">
+           class="category-card">
 
-          <div>
+          <div class="category-top">
 
-            Explore Meal Options 🍱
+            <div class="category-icon">
+              🍱
+            </div>
 
-            <span class="category-sub">
+            <div>
 
-              Filling • Fresh • Homemade
+              <div class="category-title">
+                Explore Meal Options
+              </div>
 
-            </span>
+            </div>
+
+          </div>
+
+          <div class="category-desc">
+
+            Tasty homemade meal options
+            prepared fresh with quality
+            ingredients for healthy and
+            satisfying eating.
+
+          </div>
+
+          <div class="category-click">
+
+            Click To Explore →
 
           </div>
 
@@ -562,37 +315,51 @@
 
 
 
-  <!-- ===== FOOTER ===== -->
-
+  <!-- ===== Footer ===== -->
   <footer>
 
-    <h3>
+    <div class="contact">
 
-      JUICYnFRUITY
+      <h3>Contact Us</h3>
 
-    </h3>
+      <a href="https://wa.me/9045469325">
 
-    <p>
+        <img src="imae.png" alt="WhatsApp">
 
-      Freshness In Every Sip ✨
+      </a>
 
-      <br><br>
+      <a href="https://www.instagram.com/juicy.n.fruity?igsh=MWZiY3Z0aW5xc28zOA==">
 
-      Neighborhood Park,
-      Sector 65,
-      Mohali
+        <img src="image.png" alt="Instagram">
 
-      <br><br>
+      </a>
 
-      WhatsApp Orders • COD Available 💵
+      <p>
 
-    </p>
+        Neighborhood Park,
+        Sector 65,
+        Mohali,
+        160064
+
+        <br>
+
+        Connect for Order Queries,
+        Feedback or Report Issues
+
+      </p>
+
+      <p>
+
+        © 2026 Juicy&Fruity.
+        All Rights Reserved
+
+      </p>
+
+    </div>
 
   </footer>
 
-
-
-
+  <script src="animation.js"></script>
 
 </body>
 
