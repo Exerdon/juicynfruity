@@ -57,25 +57,7 @@
 
   </style>
 
-<!-- PWA / Install App -->
-<link rel="manifest" href="/manifest.json">
 
-<meta name="theme-color" content="#1fc75b">
-
-<meta name="mobile-web-app-capable" content="yes">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta name="apple-mobile-web-app-status-bar-style"
-content="default">
-
-<meta name="apple-mobile-web-app-title"
-content="JUICYnFRUITY">
-
-<link rel="apple-touch-icon" href="/w.png">
-
-<link rel="icon" sizes="192x192" href="/w.png">
-</head>
 
 <body>
 
@@ -111,6 +93,23 @@ content="JUICYnFRUITY">
     <div class="hero-content">
 
       <h2>Welcome</h2>
+
+<button id="installBtn"
+onclick="installApp()"
+style="
+display:none;
+margin-top:15px;
+padding:14px 24px;
+border:none;
+border-radius:40px;
+background:#111;
+color:white;
+font-size:18px;
+cursor:pointer;">
+
+Add To Home Screen 📲
+
+</button>
 
       <p>
         Order Your Favorite Beverages 🥤
@@ -368,6 +367,46 @@ content="JUICYnFRUITY">
 
   <script src="animation.js"></script>
 
+<script>
+
+let deferredPrompt;
+
+window.addEventListener(
+'beforeinstallprompt',
+(e)=>{
+
+  e.preventDefault();
+
+  deferredPrompt = e;
+
+  console.log("Install available");
+
+  // SHOW BUTTON
+  const installBtn =
+  document.getElementById("installBtn");
+
+  if(installBtn){
+
+    installBtn.style.display = "inline-block";
+
+  }
+
+});
+
+async function installApp(){
+
+  if(!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+
+  const choice =
+  await deferredPrompt.userChoice;
+
+  console.log(choice);
+
+}
+
+</script>
 </body>
 
 </html>
